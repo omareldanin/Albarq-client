@@ -104,8 +104,8 @@ export const columns: ColumnDef<IReport>[] = [
     {
         accessorKey: "confirm",
         header: "التأكيد",
-        accessorFn: ({ confirm }) => {
-            return confirm ? "تم التأكيد" : "لم يتم التأكيد";
+        accessorFn: ({ confirmed }) => {
+            return confirmed ? "تم التأكيد" : "لم يتم التأكيد";
         }
     },
     {
