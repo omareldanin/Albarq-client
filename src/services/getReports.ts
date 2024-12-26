@@ -16,7 +16,7 @@ export interface Report {
     createdAt: string;
     companyNet: number;
     updatedAt: string;
-    confirm: boolean;
+    confirmed: boolean;
     companyReport: {
         reportNumber: string;
         company: {
