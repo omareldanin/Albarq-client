@@ -233,21 +233,21 @@ export const navSections: NavSection[] = [
         label: "الاصناف",
         enLabel: "categories",
         icon: IconCategoryFilled,
-        roles: ["ADMIN", "ADMIN_ASSISTANT", "COMPANY_MANAGER"]
+        roles: ["CLIENT", "CLIENT_ASSISTANT"]
     },
     {
         link: "/sizes",
         label: "الاحجام",
         enLabel: "sizes",
         icon: IconNeedle,
-        roles: ["ADMIN", "ADMIN_ASSISTANT", "COMPANY_MANAGER"]
+        roles: ["CLIENT", "CLIENT_ASSISTANT"]
     },
     {
         link: "/colors",
         label: "الالوان",
         enLabel: "colors",
         icon: IconColorFilter,
-        roles: ["ADMIN", "ADMIN_ASSISTANT", "COMPANY_MANAGER"],
+        roles: ["CLIENT", "CLIENT_ASSISTANT"],
         lastOfGroup: true
     },
     {

@@ -123,10 +123,7 @@ function App() {
                         <Route path="/branches/add" element={<AddBranch />} />
                         <Route path="/branches/:id/edit" element={<EditBranch />} />
                         <Route path="/branches/:id/show" element={<ShowBranch />} />
-                        <Route path="/sizes" element={<Sizes />} />
-                        <Route path="/colors" element={<Colors />} />
                         <Route path="/banners" element={<Banners />} />
-                        <Route path="/categories" element={<Categories />} />
                         <Route path="/repositories" element={<RepositoriesScreen />} />
                         <Route path="/repositories/add" element={<AddRepositoryScreen />} />
                         <Route path="/repositories/:id/edit" element={<EditRepositoryScreen />} />
@@ -151,6 +148,9 @@ function App() {
                         <Route path="/stores/add" element={<AddStore />} />
                         <Route path="/stores/:id/show" element={<StoreScreen />} />
                         <Route path="/stores/:id/edit" element={<EditStore />} />
+                        <Route path="/sizes" element={<Sizes />} />
+                        <Route path="/colors" element={<Colors />} />
+                        <Route path="/categories" element={<Categories />} />
                     </Route>
                 ) : null}
 
@@ -248,11 +248,8 @@ function App() {
                         <Route path="/locations/add" element={<AddLocation />} />
                         <Route path="/locations/:id/edit" element={<EditLocation />} />
                         <Route path="/locations/:id/show" element={<ShowLocation />} />
-                        <Route path="/sizes" element={<Sizes />} />
                         <Route path="/reports" element={<ReportsScreen />} />
-                        <Route path="/colors" element={<Colors />} />
                         <Route path="/banners" element={<Banners />} />
-                        <Route path="/categories" element={<Categories />} />
                         <Route path="/statistics" element={<Home />} />
                         <Route path="/employees" element={<Employees />} />
                         <Route path="/employees/add" element={<AddEmployee />} />
@@ -304,6 +301,10 @@ function App() {
                         <Route path="/stores/add" element={<AddStore />} />
                         <Route path="/stores/:id/show" element={<StoreScreen />} />
                         <Route path="/stores/:id/edit" element={<EditStore />} />
+                        <Route path="/sizes" element={<Sizes />} />
+                        <Route path="/colors" element={<Colors />} />
+                        <Route path="/categories" element={<Categories />} />
+
                     </Route>
                 ) : null}
 
