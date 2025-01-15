@@ -1,5 +1,6 @@
 import { AppLayout } from "@/components/AppLayout";
 import { useEmployeeDetails } from "@/hooks/useEmployeeDetails";
+import { orderStatusArray } from "@/lib/orderStatusArabicNames";
 import { permissionsArray } from "@/lib/persmissionArabicNames";
 import { rolesArabicNames } from "@/lib/rolesArabicNames";
 import { Autocomplete, Button, Grid, Image, MultiSelect, TextInput, rem } from "@mantine/core";
@@ -17,6 +18,9 @@ export const ShowEmployee = () => {
         .filter((permission) => employeeData?.data.permissions?.includes(permission.value as never))
         .map((permission) => permission.label);
 
+        const userOrderStatus = orderStatusArray
+        .filter((status) => employeeData?.data.orderStatus?.includes(status.value as never))
+        .map((status) => status.label);
     return (
         <AppLayout isError={isError} isLoading={isLoading}>
             <div className="flex items-center gap-4">
@@ -95,6 +99,14 @@ export const ShowEmployee = () => {
                         label="الصلاحيات"
                         value={userPermissions}
                         placeholder="اختار الصلاحيات"
+                        disabled
+                    />
+                </Grid.Col>
+                <Grid.Col span={{ base: 12, md: 6, lg: 6, sm: 12, xs: 12 }}>
+                    <MultiSelect
+                        label="الحالات"
+                        value={userOrderStatus}
+                        placeholder="اختار الحالات"
                         disabled
                     />
                 </Grid.Col>

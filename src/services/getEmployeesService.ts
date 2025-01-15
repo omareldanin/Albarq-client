@@ -1,6 +1,7 @@
 import { api } from "@/api";
 import { getEmployeesEndpoint } from "@/api/apisUrl";
 import type { EmployeesFilters } from "@/hooks/useEmployees";
+import { orderStatusArabicNames } from "@/lib/orderStatusArabicNames";
 import type { permissionsArabicNames } from "@/lib/persmissionArabicNames";
 import type { rolesArabicNames } from "@/lib/rolesArabicNames";
 
@@ -15,6 +16,7 @@ export interface Employee {
     idCard: string | null;
     residencyCard: string | null;
     permissions: (keyof typeof permissionsArabicNames)[];
+    orderStatus: (keyof typeof orderStatusArabicNames)[];
     branch: {
         id: number;
         name: string;

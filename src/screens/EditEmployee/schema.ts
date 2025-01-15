@@ -22,6 +22,11 @@ export const editEmployeeSchema = z
                 required_error: "الرجاء اختيار الصلاحيات"
             })
         ),
+        orderStatus: z.array(
+            z.string({
+                required_error: "الرجاء اختيار الحالات"
+            })
+        ),
         password: z
             .string()
             .refine((password) => !password || password.length >= 6, {

@@ -21,6 +21,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import type { z } from "zod";
 import { addEmployeeSchema } from "./schema";
+import { orderStatusArray } from "@/lib/orderStatusArabicNames";
 
 export const AddEmployee = () => {
     const navigate = useNavigate();
@@ -54,6 +55,7 @@ export const AddEmployee = () => {
             store: "",
             roles: "",
             permissions: [],
+            orderStatus: [],
             password: "",
             confirmPassword: "",
             companyID: "",
@@ -119,6 +121,10 @@ export const AddEmployee = () => {
             formData.append("companyID", loggedInCompanyId.toString());
         }
         formData.append("permissions", JSON.stringify(values.permissions));
+        if(values.orderStatus.length > 0){
+            formData.append("orderStatus", JSON.stringify(values.orderStatus));
+        }
+        
         createBranchAction(formData);
     };
 
@@ -234,6 +240,15 @@ export const AddEmployee = () => {
                             // readOnly={isBranchManager}
                             data={permissionsArray}
                             {...form.getInputProps("permissions")}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 6, sm: 12, xs: 12 }}>
+                        <MultiSelect
+                            label="الحالات"
+                            placeholder="اختار الحالات"
+                            // readOnly={isBranchManager}
+                            data={orderStatusArray}
+                            {...form.getInputProps("orderStatus")}
                         />
                     </Grid.Col>
                     <Grid.Col span={{ base: 12, md: 12, lg: 12, sm: 12, xs: 12 }}>

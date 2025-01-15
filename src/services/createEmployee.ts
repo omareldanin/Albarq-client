@@ -1,5 +1,6 @@
 import { api } from "@/api";
 import { createEmployeeEndpoint } from "@/api/apisUrl";
+import { orderStatusArabicNames } from "@/lib/orderStatusArabicNames";
 import type { permissionsArabicNames } from "@/lib/persmissionArabicNames";
 import type { rolesArabicNames } from "@/lib/rolesArabicNames";
 
@@ -13,6 +14,7 @@ export interface CreateEmployeePayload {
     branchID: number;
     role: keyof typeof rolesArabicNames;
     permissions: keyof (typeof permissionsArabicNames)[];
+    orderStatus: keyof (typeof orderStatusArabicNames)[];
 }
 
 export const createEmployeeService = async (data: FormData) => {

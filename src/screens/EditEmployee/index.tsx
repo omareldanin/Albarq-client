@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 import { useNavigate, useParams } from "react-router-dom";
 import type { z } from "zod";
 import { editEmployeeSchema } from "./schema";
+import { orderStatusArray } from "@/lib/orderStatusArabicNames";
 
 export const EditEmployee = () => {
     const { id = "" } = useParams();
@@ -46,6 +47,7 @@ export const EditEmployee = () => {
             repository: "",
             role: "",
             permissions: [] as string[],
+            orderStatus: [] as string[],
             password: "",
             confirmPassword: "",
             companyID: "",
@@ -70,6 +72,7 @@ export const EditEmployee = () => {
                 role: employeeDetails.data.role,
                 companyID: employeeDetails.data.company?.id.toString(),
                 permissions: employeeDetails.data?.permissions,
+                orderStatus: employeeDetails.data?.orderStatus,
                 avatar: [avatarAddress] as unknown as FileWithPath[],
                 idCard: [idCardAddress] as unknown as FileWithPath[],
                 residencyCard: [residencyCardAddress] as unknown as FileWithPath[]
@@ -122,6 +125,7 @@ export const EditEmployee = () => {
             formData.append("companyID", loggedInCompanyId.toString());
         }
         formData.append("permissions", JSON.stringify(values.permissions));
+        formData.append("orderStatus", JSON.stringify(values.orderStatus));
         if (values.password) {
             formData.append("password", values.password);
         }
@@ -231,6 +235,14 @@ export const EditEmployee = () => {
                             placeholder="اختار الصلاحيات"
                             data={permissionsArray}
                             {...form.getInputProps("permissions")}
+                        />
+                    </Grid.Col>
+                    <Grid.Col span={{ base: 12, md: 6, lg: 6, sm: 12, xs: 12 }}>
+                        <MultiSelect
+                            label="الحالات"
+                            placeholder="اختار الحالات"
+                            data={orderStatusArray}
+                            {...form.getInputProps("orderStatus")}
                         />
                     </Grid.Col>
                     <Grid.Col span={{ base: 12, md: 12, lg: 12, sm: 12, xs: 12 }}>
